@@ -141,9 +141,6 @@ class LoginPage extends StatelessWidget {
                 style: ThemeText.themetext(18.h, Colors.black),
               ),
             ),
-            // Container(
-            //   // color: Colors.red,
-            //   child: SvgPicture.asset('assets/svg/image.svg', height: 150, width: 150,fit: BoxFit.cover,))
           ],
         ),
       )),
