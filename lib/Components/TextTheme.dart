@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../Export/AllExport.dart';
 
 class ThemeText {
-  static TextStyle themetext(fontSize, color) {
+  static TextStyle themetext(double fontSize,Color color) {
     return GoogleFonts.manrope(
         textStyle: TextStyle(
           fontSize: fontSize, 
@@ -10,7 +9,7 @@ class ThemeText {
           fontWeight: FontWeight.bold));
   }
 
-   static TextStyle ButtonTextTheme(fontSize, color) {
+   static TextStyle ButtonTextTheme(double fontSize,Color color) {
     return GoogleFonts.manrope(
         textStyle: TextStyle(
           fontSize: fontSize, 

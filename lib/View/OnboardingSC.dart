@@ -1,57 +1,74 @@
-import 'package:fastfood_app/Components/ButtonTheme.dart';
-import 'package:fastfood_app/Components/TextTheme.dart';
-import 'package:fastfood_app/View/LoginPage.dart';
-import 'package:fastfood_app/View/SignupPage.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:fastfood_app/Components/custom_widget.dart';
+
+import '../Export/AllExport.dart';
 
 class OnboardingSC extends StatelessWidget {
   const OnboardingSC({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final sh = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: SafeArea(
-        child: Center(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 1.sh * 0.15),
-              Image.asset('assets/logo.png', height: 1.sh * 0.25),
+              WaveAnimation(
+                  delay: Duration(microseconds: 800),
+                  duration: Duration(microseconds: 100),
+                  begin: 1,
+                  end: 3,
+                  child: Image.asset('assets/logo.png', height: 140)),
               SizedBox(
-                height: 10.h,
+                height: 10,
               ),
-              Text("ARestro", style: ThemeText.themetext(36.h, Colors.black)),
-              SizedBox(height: 1.sh * 0.15),
-              AppButtonTheme(
-                  iscolor: true,
-                  onPressed: () {
-                    Get.to(
-                      () => LoginPage(),
-                      curve: Curves.easeInOut,
-                      transition: Transition.fade,
-                      duration: Duration(milliseconds: 400),
-                    );
-                  },
-                  child: Text(
-                    "Log in",
-                    style: ThemeText.ButtonTextTheme(18.h, Colors.white),
-                  )),
-              SizedBox(
-                height: 18.h,
+              Text("ARestro", style: ThemeText.themetext(22, Colors.black)),
+              SizedBox(height: sh * 0.10),
+              Column(
+                children: List.generate(
+                  2,
+                  (index) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: GestureDetector(
+                      onTap: () {
+                        if (index == 0) {
+                          Get.toNamed(AppRoutes.Login);
+                        }
+                        else if(index==1){
+
+                          Get.toNamed(AppRoutes.Signup);
+
+
+                        }
+                      },
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: index == 0
+                                  ? Colors.transparent
+                                  : Colors.black),
+                          color: index == 0
+                              ? const Color(0xff009944)
+                              : Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                            child: CustomMainText(
+                          text: index == 0 ? "LogIn" : "SighnUp",
+                          fontSize: 18,
+                          color: index == 0 ? Colors.white : Colors.black,
+                          fontWeight: FontWeight.bold,
+                        )),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              AppButtonTheme(
-                  onPressed: () {
-                     Get.to(
-                      () => SignupPage(),
-                      curve: Curves.easeInOut,
-                      transition: Transition.fade,
-                      duration: Duration(milliseconds: 400),
-                    );
-                  },
-                  child: Text("Sign Up",
-                      style: ThemeText.ButtonTextTheme(18.h, Colors.black)),
-                  iscolor: false)
             ],
           ),
         ),

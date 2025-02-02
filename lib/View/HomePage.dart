@@ -1,22 +1,20 @@
-import 'package:fastfood_app/Components/TextTheme.dart';
-import 'package:fastfood_app/View/fooddetail.dart';
-import 'package:fastfood_app/model/dummymodel.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../Export/AllExport.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final sh = MediaQuery.of(context).size.height;
+    final sw = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: Drawer(),
       appBar: AppBar(
         elevation: 0,
         title: Image.asset(
           'assets/logo2.png',
-          height: 35.h,
+          height: 35,
         ),
         centerTitle: true,
       ),
@@ -24,13 +22,17 @@ class HomePage extends StatelessWidget {
         physics: const ClampingScrollPhysics(),
         child: Column(
           children: [
-            SizedBox(
-              height: 12.h,
+            SvgPicture.network(
+                "https://static.vecteezy.com/system/resources/thumbnails/022/664/807/small_2x/cat-face-silhouettes-cat-face-svg-black-and-white-cat-vector.jpg",height: 200,width: 100,),
+            SvgPicture.asset(
+              'assets/images/svg/salad.svg',
+              height: 50,
+              fit: BoxFit.cover,
             ),
             Center(
               child: Container(
-                height: 1.sh * 0.2,
-                width: 1.sw * 0.92,
+                height: sh * 0.2,
+                width: sw * 0.92,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topLeft,
@@ -40,7 +42,7 @@ class HomePage extends StatelessWidget {
                 child: Stack(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 12.w, top: 6.h, bottom: 6),
+                      padding: EdgeInsets.only(left: 12, top: 6, bottom: 6),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,23 +50,23 @@ class HomePage extends StatelessWidget {
                           Text(
                             'Special Offer\nfor March',
                             textAlign: TextAlign.start,
-                            style: ThemeText.themetext(20.h, Colors.white),
+                            style: ThemeText.themetext(20, Colors.white),
                           ),
                           Text(
                             textAlign: TextAlign.start,
                             'We are here with the\nBest Burgers in town.',
-                            style: ThemeText.themetext(10.h, Colors.white),
+                            style: ThemeText.themetext(10, Colors.white),
                           ),
                           Container(
-                            height: 30.h,
-                            width: 85.w,
+                            height: 30,
+                            width: 85,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(8)),
                             child: Center(
                               child: Text(
                                 'Buy Now',
-                                style: ThemeText.themetext(12.h, Colors.black),
+                                style: ThemeText.themetext(12, Colors.black),
                               ),
                             ),
                           )
@@ -72,23 +74,23 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                        right: -2.w, child: Image.asset('assets/burger.png'))
+                        right: -2, child: Image.asset('assets/burger.png'))
                   ],
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Best Offers',
-                    style: ThemeText.themetext(20.h, Colors.black),
+                    style: ThemeText.themetext(20, Colors.black),
                   ),
                   Text(
                     'See all >',
-                    style: ThemeText.themetext(16.h, Color(0xff009944)),
+                    style: ThemeText.themetext(16, Color(0xff009944)),
                   ),
                 ],
               ),
@@ -96,8 +98,8 @@ class HomePage extends StatelessWidget {
             LayoutBuilder(
               builder: (context, constraints) {
                 return Container(
-                  height: 1.sh * 0.4,
-                  width: 1.sw,
+                  height: sh * 0.36,
+                  width: sw,
                   // color: Colors.red,
                   child: ListView.builder(
                     shrinkWrap: true,
@@ -107,18 +109,13 @@ class HomePage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final food = foods[index];
                       return Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: InkWell(
-                          onTap: () => Get.to(
-                              () => FoodDetails(
-                                    foodmodel: food,
-                                  ),
-                              curve: Curves.decelerate,
-                              duration: Duration(milliseconds: 400),
-                              transition: Transition.upToDown),
+                          onTap: () => Get.toNamed(AppRoutes.FoodDetails,
+                              arguments: food),
                           child: Container(
-                            height: 1.sh,
-                            width: 1.sw * 0.35,
+                            height: sh,
+                            width: sw * 0.35,
                             // color: Colors.blue,
                             child: Stack(
                               children: [
@@ -127,8 +124,8 @@ class HomePage extends StatelessWidget {
                                     right: 15,
                                     left: 15,
                                     child: Container(
-                                      height: 1.sh * 0.3,
-                                      width: 1.sw * 0.2,
+                                      height: sh * 0.3,
+                                      width: sw * 0.2,
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           boxShadow: [
@@ -143,59 +140,62 @@ class HomePage extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(8)),
                                       child: Padding(
-                                        padding: const EdgeInsets.only(top: 70),
+                                        padding: const EdgeInsets.only(top: 80),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Text(food.foodname,
-                                                style: ThemeText.themetext(
-                                                    20.h, Colors.black)),
-                                            SizedBox(height: 12.h),
-                                            Text(food.details,
-                                                style: ThemeText.themetext(
-                                                    13.h, Colors.grey)),
-                                            SizedBox(height: 15.h),
-                                            Text('Rs ' + food.price.toString(),
-                                                style: ThemeText.themetext(
-                                                    18.h, Color(0xff009944))),
+                                            FittedBox(
+                                              child: Text(food.foodname,
+                                                  style: ThemeText.themetext(
+                                                      18, Colors.black)),
+                                            ),
+                                            SizedBox(height: 12),
+                                            FittedBox(
+                                              child: Text(food.details,
+                                                  style: ThemeText.themetext(
+                                                      13.0, Colors.grey)),
+                                            ),
+                                            SizedBox(height: 15),
+                                            FittedBox(
+                                              child: Text(
+                                                  'Rs ' + food.price.toString(),
+                                                  style: ThemeText.themetext(
+                                                      18.0, Color(0xff009944))),
+                                            ),
                                           ],
                                         ),
                                       ),
                                     )),
                                 Positioned(
-                                    top: 10,
-                                    left: 5,
-                                    right: 5,
-                                    child: Hero(
-                                      tag: food.foodimage,
-                                      child: Transform.rotate(
-                                        angle: 0.1,
-                                        child: Container(
-                                          height: 1.sh * 0.155,
-                                          width: 1.sw * 0.1,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.grey
-                                                      .withOpacity(0.3),
-                                                  spreadRadius: 2,
-                                                  blurRadius: 5,
-                                                  offset: Offset(0, 3),
-                                                ),
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(100),
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                    food.foodimage,
-                                                  ),
-                                                  alignment: Alignment.center,
-                                                  fit: BoxFit.contain)),
+                                  top: 0,
+                                  left: 5,
+                                  right: 5,
+                                  child: Container(
+                                    height: sh * 0.155,
+                                    width: sw * 0.1,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.3),
+                                          spreadRadius: 2,
+                                          blurRadius: 5,
+                                          offset: Offset(0, 3),
                                         ),
+                                      ],
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: Center(
+                                      child: Hero(
+                                        tag: food.foodimage,
+                                        child: Transform.rotate(
+                                            angle: 0.1,
+                                            child: Image.asset(food.foodimage)),
                                       ),
-                                    )),
+                                    ),
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -207,80 +207,96 @@ class HomePage extends StatelessWidget {
               },
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Restaurants Nearby',
-                    style: ThemeText.themetext(20.h, Colors.black),
+                    style: ThemeText.themetext(20, Colors.black),
                   ),
                   Text(
                     'See all >',
-                    style: ThemeText.themetext(16.h, Color(0xff009944)),
+                    style: ThemeText.themetext(16, Color(0xff009944)),
                   ),
                 ],
               ),
             ),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                return Container(
-                  height: 1.sh * 0.23,
-                  width: 1.sw,
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 1.sh,
-                          width: 1.sw * 0.5,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 1.sh * 0.13,
-                                width: 1.sw,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/hotel.png'),
-                                        fit: BoxFit.fill),
-                                    borderRadius: BorderRadius.circular(12)),
-                              ),
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              Text(
-                                'Restaurant Name',
-                                style: ThemeText.themetext(15.h, Colors.black),
-                              ),
-                              SizedBox(
-                                height: 5.h,
-                              ),
-                              Row(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                height: 250,
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 300,
+                        width: sw * 0.7,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(0.2),
+                                  blurRadius: 5,
+                                  spreadRadius: 3,
+                                  offset: Offset(1, 3))
+                            ]),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: sh * 0.16,
+                              width: sw,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage('assets/hotel.png'),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15))),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.orange,
-                                  ),
                                   Text(
-                                    '4.5',
+                                    'Restaurant Name',
                                     style:
-                                        ThemeText.themetext(13.h, Colors.black),
-                                  )
+                                        ThemeText.themetext(15, Colors.black),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.orange,
+                                      ),
+                                      Text(
+                                        '4.5',
+                                        style: ThemeText.themetext(
+                                            13, Colors.black),
+                                      )
+                                    ],
+                                  ),
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            )
+                          ],
                         ),
-                      );
-                    },
-                  ),
-                );
-              },
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
           ],
         ),

@@ -1,7 +1,5 @@
-import 'package:fastfood_app/View/OnboardingSC.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+import '../Export/AllExport.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,16 +10,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      builder: (context ,child) {
-        return GetMaterialApp(
-          title: 'Fast Food App',
-          debugShowCheckedModeBanner: false,
-          home: const OnboardingSC()
-        );
-      }
+    return GetMaterialApp(
+      title: 'Fast Food App',
+      debugShowCheckedModeBanner: false,
+      builder: (context, child) => ResponsiveWrapper.builder(
+        child,
+        maxWidth: 1200,
+        minWidth: 375,
+        defaultScale: true,
+        breakpoints: [
+          ResponsiveBreakpoint.resize(375, name: MOBILE),
+          ResponsiveBreakpoint.autoScale(768, name: TABLET),
+          ResponsiveBreakpoint.autoScale(1024, name: DESKTOP),
+          ResponsiveBreakpoint.autoScale(1200, name: 'XL'),
+        ],
+      ),
+      // home: HomeScreen(),
+      initialRoute: AppRoutes.onboarding,
+      getPages: AppPages.routes,
     );
   }
 }

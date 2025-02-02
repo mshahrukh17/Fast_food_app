@@ -1,5 +1,4 @@
-import 'package:fastfood_app/model/model.dart';
-import 'package:get/get.dart';
+import '../Export/AllExport.dart';
 
 class CartController extends GetxController {
   RxList<Foodmodel> cartItems = <Foodmodel>[].obs;
@@ -10,12 +9,10 @@ class CartController extends GetxController {
 
   addToCart(Foodmodel food) {
     if (isInCart(food)) {
-      // If item already in cart, increase quantity
       int index = cartItems.indexWhere((item) => item.foodname == food.foodname);
       cartItems[index].quantity += 1;
-      cartItems.refresh(); // Notify UI about the change
+      cartItems.refresh();
     } else {
-      // Add item with default quantity 1
       cartItems.add(food);
     }
   }
@@ -28,7 +25,7 @@ class CartController extends GetxController {
     int index = cartItems.indexWhere((item) => item.foodname == food.foodname);
     if (index != -1) {
       cartItems[index].quantity += 1;
-      cartItems.refresh(); // Notify UI about the change
+      cartItems.refresh();
     }
   }
 
@@ -36,7 +33,7 @@ class CartController extends GetxController {
     int index = cartItems.indexWhere((item) => item.foodname == food.foodname);
     if (index != -1 && cartItems[index].quantity > 1) {
       cartItems[index].quantity -= 1;
-      cartItems.refresh(); // Notify UI about the change
+      cartItems.refresh();
     }
   }
 
