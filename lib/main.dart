@@ -15,17 +15,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       builder: (context, child) => ResponsiveWrapper.builder(
         child,
-        maxWidth: 1200,
+        maxWidth: 1900,
         minWidth: 375,
         defaultScale: true,
         breakpoints: [
           ResponsiveBreakpoint.resize(375, name: MOBILE),
           ResponsiveBreakpoint.autoScale(768, name: TABLET),
           ResponsiveBreakpoint.autoScale(1024, name: DESKTOP),
-          ResponsiveBreakpoint.autoScale(1200, name: 'XL'),
+          ResponsiveBreakpoint.autoScale(1900, name: 'XL'),
         ],
       ),
-      // home: HomeScreen(),
       initialRoute: AppRoutes.onboarding,
       getPages: AppPages.routes,
     );

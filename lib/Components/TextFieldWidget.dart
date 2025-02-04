@@ -19,42 +19,43 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      
-      controller: controller,
-      obscureText: obscuretext,
-      cursorColor: Color(0xff009944),
-      keyboardType: keyboardType,
-      obscuringCharacter: "*",
-      showCursor: true,
-      textAlign: TextAlign.start,
-      style: TextStyle(
-          fontWeight: FontWeight.bold, color: Colors.black, fontSize: 16),
-      autocorrect: true,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.all(15),
-        suffixIcon: suffixicon,
-        prefixIcon: prefixicon,
-        labelText: labeltext,
-        labelStyle: ThemeText.themetext(16, Colors.grey.shade700),
-        filled: false,
-        fillColor: Colors.white,
-        border: InputBorder.none,
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Color(0xff009944), width: 2)),
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Colors.grey.shade400, width: 1.1)),
-        disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Colors.grey.shade400, width: 1.1)),
-        errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Colors.red, width: 1.1)),
-        focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Colors.red, width: 1.1)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: TextField(
+        controller: controller,
+        obscureText: obscuretext,
+        cursorColor: Color(0xff009944),
+        keyboardType: keyboardType,
+        obscuringCharacter: "*",
+        // showCursor: true,
+        textAlign: TextAlign.start,
+        style: TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 16),
+        autocorrect: true,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(15),
+          suffixIcon: suffixicon,
+          prefixIcon: prefixicon,
+          labelText: labeltext,
+          filled: true,
+          fillColor: Colors.white,
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Color(0xff009944), width: 2)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Colors.grey.shade400, width: 1.1)),
+          disabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Colors.grey.shade400, width: 1.1)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Colors.red, width: 1.1)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Colors.red, width: 1.1)),
+        ),
       ),
     );
   }

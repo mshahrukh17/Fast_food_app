@@ -1,3 +1,5 @@
+import 'package:fastfood_app/Controller/authController/AuthController.dart';
+
 import '../../Export/AllExport.dart';
 
 class SignupPage extends StatelessWidget {
@@ -7,53 +9,59 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final sh = MediaQuery.of(context).size.height;
     final sw = MediaQuery.of(context).size.width;
-    TextEditingController _usernameController = TextEditingController();
-    TextEditingController _emailController = TextEditingController();
-    TextEditingController _phoneController = TextEditingController();
-    TextEditingController _passwordController = TextEditingController();
+    final AuthController controller = Get.put(AuthController());
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 60, right: 20, left: 20),
+          padding: const EdgeInsets.only(
+            top: 20,
+          ),
           child: Column(
             children: [
-              Image.asset(
-                'assets/logo.png',
-                height: sh * 0.15,
+              Hero(
+                tag: 'assets/logo.png',
+                child: Image.asset(
+                  'assets/logo.png',
+                  height: sh * 0.15,
+                ),
               ),
               SizedBox(height: 10),
-              Text(
-                "Sign Up",
-                style: ThemeText.themetext(24.0, Colors.black),
+              CustomMainText(
+                text: 'Sign Up',
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
               SizedBox(
                 height: 20,
               ),
               TextFieldWidget(
                   prefixicon: Icon(Icons.person),
-                  controller: _usernameController,
+                  controller: controller.usernameController,
                   keyboardType: TextInputType.name,
                   labeltext: "User Name"),
               SizedBox(height: 18),
               TextFieldWidget(
                   prefixicon: Icon(Icons.mail),
-                  controller: _emailController,
+                  controller: controller.emailController,
                   keyboardType: TextInputType.emailAddress,
                   labeltext: "Email Address"),
               SizedBox(height: 18),
-              TextFieldWidget(
-                  obscuretext: true,
-                  prefixicon: Icon(Icons.lock),
-                  suffixicon: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.visibility)),
-                  controller: _passwordController,
-                  keyboardType: TextInputType.visiblePassword,
-                  labeltext: "Password"),
+              Obx(()=> TextFieldWidget(
+                    obscuretext: !controller.showPassword.value,
+                    prefixicon: Icon(Icons.lock),
+                    suffixicon: IconButton(
+                        onPressed: () {
+                          controller.showPassword.value = !controller.showPassword.value;
+                        }, icon: Icon(controller.showPassword.value ? Icons.visibility : Icons.visibility_off)),
+                    controller: controller.passwordController,
+                    keyboardType: TextInputType.visiblePassword,
+                    labeltext: "Password"),
+              ),
               SizedBox(height: 20),
               TextFieldWidget(
                   prefixicon: Icon(Icons.phone),
-                  controller: _phoneController,
+                  controller: controller.phoneController,
                   keyboardType: TextInputType.phone,
                   labeltext: "Phone Number"),
               SizedBox(height: 18),
@@ -61,9 +69,11 @@ class SignupPage extends StatelessWidget {
                   onPressed: () {
                     Get.toNamed(AppRoutes.Home);
                   },
-                  child: Text(
-                    "Sign up",
-                    style: ThemeText.ButtonTextTheme(18.0, Colors.white),
+                  child: CustomMainText(
+                    text: 'Sign Up',
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                   ),
                   iscolor: true),
               SizedBox(
@@ -81,9 +91,9 @@ class SignupPage extends StatelessWidget {
                     ),
                   ),
                   Flexible(
-                    child: Text(
-                      "or continue with",
-                      style: ThemeText.themetext(14.0, Colors.grey.shade700),
+                    child: CustomMainText(
+                      text: 'Or Continue with',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   Flexible(
@@ -116,13 +126,13 @@ class SignupPage extends StatelessWidget {
                       height: 45,
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 45,
                     ),
-                    Text(
-                      'Sign Up with Google',
-                      textAlign: TextAlign.center,
-                      style: ThemeText.themetext(16.0, Colors.grey.shade700),
-                    )
+                    CustomMainText(
+                      text: 'Sign Up with Google',
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ],
                 ),
               ),
@@ -131,10 +141,7 @@ class SignupPage extends StatelessWidget {
               ),
               InkWell(
                 onTap: () => Get.toNamed(AppRoutes.Login),
-                child: Text(
-                  'Already have an account ? Log In',
-                  style: ThemeText.themetext(18.0, Colors.black),
-                ),
+                child: CustomMainText(text: 'Already Have an Account? Log In', fontWeight: FontWeight.w500,),
               )
             ],
           ),

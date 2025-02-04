@@ -1,19 +1,33 @@
-import '../Export/AllExport.dart';
+import 'package:fastfood_app/Export/AllExport.dart';
 
-class ThemeText {
-  static TextStyle themetext(double fontSize,Color color) {
-    return GoogleFonts.manrope(
-        textStyle: TextStyle(
-          fontSize: fontSize, 
-          color: color,
-          fontWeight: FontWeight.bold));
-  }
+class CustomMainText extends StatelessWidget {
+  final String text;
+  final double? fontSize;
+  final Color? color;
+  final FontWeight? fontWeight;
+  final TextAlign? textAlign;
 
-   static TextStyle ButtonTextTheme(double fontSize,Color color) {
-    return GoogleFonts.manrope(
-        textStyle: TextStyle(
-          fontSize: fontSize, 
-          color: color,
-          fontWeight: FontWeight.bold));
+  const CustomMainText({
+    Key? key,
+    required this.text,
+    this.fontSize,
+    this.color,
+    this.fontWeight,
+    this.textAlign,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign ?? TextAlign.start,
+      style: GoogleFonts.manrope(
+        textStyle : TextStyle(
+          color: color ?? Colors.black,
+          fontSize: fontSize,
+          fontWeight: fontWeight
+        ) 
+      )
+    );
   }
 }
