@@ -12,3 +12,23 @@ class Foodmodel{
     this.quantity = 1
   });
 }
+
+class ResturantModel{
+  String resturantimage;
+  String resturantname;
+  String details;
+
+  ResturantModel({
+   required this.resturantimage,
+   required this.resturantname,
+   required this.details
+  });
+}
+
+class Tables{
+  String tableimage;
+
+  Tables({
+   required this.tableimage,
+  });
+}

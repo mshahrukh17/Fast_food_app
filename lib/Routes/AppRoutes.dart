@@ -1,11 +1,15 @@
-class AppRoutes{
-  static const String onboarding= '/onboarding';
-  static const String Login = '/login';
-  static const String Signup = '/signup';
+class AppRoutes {
+  static const String onboarding = '/onboardingPage';
+  static const String Login = '/loginPage';
+  static const String Signup = '/signupPage';
   static const String BottomNavBar = '/bottomnavbar';
-  static const String Home = '/home';
-  static const String FoodDetails = '/fooddetails';
-  static const String SeeAllPage= '/seeall';
-  static const String CartPage = '/cart';
-  static const String OrderDone = '/orderdone';
+  static const String Home = '/homePage';
+  static const String FoodDetails = '/fooddetailsPage';
+  static const String SeeAllPage = '/seeallPage';
+  static const String CartPage = '/cartPage';
+  static const String OrderDone = '/orderdonePage';
+  static const String ResturantDetails = '/resturantdetailsPage';
+  static const String ReserveTable = '/reservetablePage';
+  static const String TableBook = '/tablebookPage';
+  static const String FavoriteItems = '/favoriteitemPage';
 }

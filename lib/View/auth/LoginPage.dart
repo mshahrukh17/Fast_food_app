@@ -1,4 +1,3 @@
-import 'package:fastfood_app/Controller/authController/AuthController.dart';
 import '../../Export/AllExport.dart';
 
 class LoginPage extends StatelessWidget {
@@ -53,7 +52,9 @@ class LoginPage extends StatelessWidget {
                         controller.loginshowPassword.value =
                             !controller.loginshowPassword.value;
                       },
-                      icon: Icon(controller.loginshowPassword.value ? Icons.visibility : Icons.visibility_off)),
+                      icon: Icon(controller.loginshowPassword.value
+                          ? Icons.visibility
+                          : Icons.visibility_off)),
                   controller: controller.loginPasswordController,
                   keyboardType: TextInputType.visiblePassword,
                   labeltext: "Password"),
@@ -63,13 +64,18 @@ class LoginPage extends StatelessWidget {
             ),
             AppButtonTheme(
                 onPressed: () {
-                  Get.toNamed(AppRoutes.BottomNavBar);
+                  controller.LoginUser();
                 },
-                child: CustomMainText(
-                  text: 'Log In',
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                child: Obx(
+                  () => controller.isloading.value ?CircularProgressIndicator(
+                    color:const Color(0xFFFFFFFF),
+                  ) : 
+                  CustomMainText(
+                    text: 'Log In',
+                    fontSize: 18,
+                    color:const Color(0xFFFFFFFF),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 iscolor: true),
             SizedBox(
@@ -106,11 +112,11 @@ class LoginPage extends StatelessWidget {
               height: 55,
               width: sw * 0.88,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color:const Color(0xFFFFFFFF),
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color:const Color(0xFF9E9E9E).withOpacity(0.3),
                       spreadRadius: 1,
                       blurRadius: 1,
                       offset: Offset(0, 1),
@@ -136,7 +142,7 @@ class LoginPage extends StatelessWidget {
               height: 30,
             ),
             InkWell(
-              onTap: () => Get.toNamed(AppRoutes.Signup),
+              onTap: () => Get.offNamed(AppRoutes.Signup),
               child: CustomMainText(
                   text: 'Dont have an Account? Sign Up',
                   fontSize: 15,

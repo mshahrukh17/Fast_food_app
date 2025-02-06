@@ -1,4 +1,4 @@
-import 'package:fastfood_app/Export/AllExport.dart';
+import '../Export/AllExport.dart';
 
 class CustomMainText extends StatelessWidget {
   final String text;
@@ -23,7 +23,7 @@ class CustomMainText extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.start,
       style: GoogleFonts.manrope(
         textStyle : TextStyle(
-          color: color ?? Colors.black,
+          color: color ??const Color(0xFF000000),
           fontSize: fontSize,
           fontWeight: fontWeight
         ) 

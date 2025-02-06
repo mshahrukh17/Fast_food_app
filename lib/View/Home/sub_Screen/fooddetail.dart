@@ -1,6 +1,4 @@
-import 'package:fastfood_app/Animation/Animations.dart';
-import 'package:fastfood_app/Components/Snackbar.dart';
-
+import 'package:fastfood_app/Controller/favoriteController/FavoriteController.dart';
 import '../../../Export/AllExport.dart';
 
 class FoodDetails extends StatelessWidget {
@@ -12,7 +10,10 @@ class FoodDetails extends StatelessWidget {
     final sw = MediaQuery.of(context).size.width;
     final CartController controller =
         Get.put(CartController(), permanent: true);
+    final FavoriteController favController =
+        Get.put(FavoriteController(), permanent: true);
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFFFFF),
         elevation: 1,
@@ -24,105 +25,134 @@ class FoodDetails extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16,),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 20,),
-                  Container(
-                      height: 200,
-                      width: sw,
-                      child: Hero(
-                        tag: foodmodel.foodimage,
-                        child: Image.asset(
-                          foodmodel.foodimage,
-                          fit: BoxFit.fitHeight,alignment: Alignment.center,
-                        ),
-                      )),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    height: 200,
+                    width: sw,
+                    child: Hero(
+                      tag: foodmodel.foodimage,
+                      child: Image.asset(
+                        foodmodel.foodimage,
+                        fit: BoxFit.fitHeight,
+                        alignment: Alignment.center,
+                      ),
+                    )),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                          height: 35,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: Color(0xFFC7C6C6),
-                              borderRadius: BorderRadius.circular(8)),
-                          child: Center(
-                              child: CustomMainText(
-                            text: 'Popular',
-                            color: const Color(0xff004422),
-                            fontWeight: FontWeight.bold,
-                          ))),
-                      CircleAvatar(
-                        backgroundColor: const Color(0xFFC7C6C6),
-                        child: Center(
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.favorite,
-                                color: const Color(0xFF000000),
-                                size: 25,
-                              )),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  CustomMainText(
-                    text: foodmodel.foodname,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star_half,
-                        color: const Color(0xFFF39405),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                              height: 35,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFC7C6C6),
+                                  borderRadius: BorderRadius.circular(8)),
+                              child: Center(
+                                  child: CustomMainText(
+                                text: 'Popular',
+                                color: const Color(0xff004422),
+                                fontWeight: FontWeight.bold,
+                              ))),
+                          Obx(
+                            () => CircleAvatar(
+                              backgroundColor: const Color(0xFFC7C6C6),
+                              child: Center(
+                                child: IconButton(
+                                    onPressed: () {
+                                      if (favController.isInFav(foodmodel)) {
+                                        favController.removeFromFav(foodmodel);
+                                      } else {
+                                        favController.addtoFav(foodmodel);
+                                      }
+                                    },
+                                    icon: Icon(
+                                      favController.isInFav(foodmodel)
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: favController.isInFav(foodmodel)
+                                          ? const Color(0xFFFF0101)
+                                          : const Color(0xFF000000),
+                                      size: 25,
+                                    )),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
                       ),
                       CustomMainText(
-                        text: '  4.8 Ratings',
-                        color: const Color(0xFF9E9E9E),
+                        text: foodmodel.foodname,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star_half,
+                            color: const Color(0xFFF39405),
+                          ),
+                          CustomMainText(
+                            text: '  4.8 Ratings',
+                            color: const Color(0xFF9E9E9E),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                          const SizedBox(
+                            width: 30,
+                          ),
+                          Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Color(0xff009944),
+                          ),
+                          CustomMainText(
+                            text: '  2000+ Orders',
+                            color: const Color(0xFF9E9E9E),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      CustomMainText(
+                        text:
+                            'Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt.',
+                        color: Color(0xFF000000),
+                        fontWeight: FontWeight.w500,
                         fontSize: 14,
                       ),
                       const SizedBox(
-                        width: 30,
-                      ),
-                      Icon(
-                        Icons.shopping_bag_outlined,
-                        color: Color(0xff009944),
+                        height: 20,
                       ),
                       CustomMainText(
-                        text: '  2000+ Orders',
-                        color: const Color(0xFF9E9E9E),
+                        text: 'Resturants',
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                      )
+                      ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  CustomMainText(
-                    text:
-                        'Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt.',
-                    color: Color(0xFF000000),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  )
-                ],
-              ),
+                ),
+                HotelHoriList(),
+                const SizedBox(
+                  height: 80,
+                ),
+              ],
             ),
           ),
           Positioned(
@@ -140,18 +170,18 @@ class FoodDetails extends StatelessWidget {
                               'Food Removed from Cart', SnackBarType.delete);
                         } else {
                           controller.addToCart(foodmodel);
-                          showUltimateSnackBar('Success', 'Checkout in your Cart',
-                              SnackBarType.success);
+                          showUltimateSnackBar('Success',
+                              'Checkout in your Cart', SnackBarType.success);
                         }
                       },
                       child: CustomMainText(
-                              text: controller.isInCart(foodmodel)
-                                  ? 'Remove from cart'
-                                  : 'Add to cart',
-                              color:const Color(0xFFFFFFFF),
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        text: controller.isInCart(foodmodel)
+                            ? 'Remove from cart'
+                            : 'Add to cart',
+                        color: const Color(0xFFFFFFFF),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                       iscolor: true),
                 ),
               )),

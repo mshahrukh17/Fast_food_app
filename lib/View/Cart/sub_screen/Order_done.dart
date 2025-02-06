@@ -58,7 +58,7 @@ class OrderDone extends StatelessWidget {
               right: 16,
               child: AppButtonTheme(
                   onPressed: () {
-                    Get.toNamed(AppRoutes.BottomNavBar);
+                    Get.offAllNamed(AppRoutes.BottomNavBar);
                   },
                   child: CustomMainText(
                     text: 'Go Home',

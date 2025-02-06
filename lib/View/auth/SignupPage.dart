@@ -1,5 +1,3 @@
-import 'package:fastfood_app/Controller/authController/AuthController.dart';
-
 import '../../Export/AllExport.dart';
 
 class SignupPage extends StatelessWidget {
@@ -47,33 +45,44 @@ class SignupPage extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                   labeltext: "Email Address"),
               SizedBox(height: 18),
-              Obx(()=> TextFieldWidget(
-                    obscuretext: !controller.showPassword.value,
-                    prefixicon: Icon(Icons.lock),
-                    suffixicon: IconButton(
-                        onPressed: () {
-                          controller.showPassword.value = !controller.showPassword.value;
-                        }, icon: Icon(controller.showPassword.value ? Icons.visibility : Icons.visibility_off)),
-                    controller: controller.passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    labeltext: "Password"),
-              ),
-              SizedBox(height: 20),
               TextFieldWidget(
                   prefixicon: Icon(Icons.phone),
                   controller: controller.phoneController,
                   keyboardType: TextInputType.phone,
                   labeltext: "Phone Number"),
               SizedBox(height: 18),
+              Obx(
+                () => TextFieldWidget(
+                    obscuretext: !controller.showPassword.value,
+                    prefixicon: Icon(Icons.lock),
+                    suffixicon: IconButton(
+                        onPressed: () {
+                          controller.showPassword.value =
+                              !controller.showPassword.value;
+                        },
+                        icon: Icon(controller.showPassword.value
+                            ? Icons.visibility
+                            : Icons.visibility_off)),
+                    controller: controller.passwordController,
+                    keyboardType: TextInputType.visiblePassword,
+                    labeltext: "Password"),
+              ),
+              SizedBox(height: 18),
               AppButtonTheme(
                   onPressed: () {
-                    Get.toNamed(AppRoutes.Home);
+                    controller.SignUp();
                   },
-                  child: CustomMainText(
-                    text: 'Sign Up',
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  child: Obx(
+                    () => controller.isloading.value
+                        ? CircularProgressIndicator(
+                            color: const Color(0xFFFFFFFF),
+                          )
+                        : CustomMainText(
+                            text: 'Sign Up',
+                            color: const Color(0xFFFFFFFF),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
                   ),
                   iscolor: true),
               SizedBox(
@@ -113,9 +122,18 @@ class SignupPage extends StatelessWidget {
                 height: 55,
                 width: sw * 0.88,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.black)),
+                  color: const Color(0xFFFFFFFF),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.black),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF9E9E9E).withOpacity(0.3),
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                      offset: Offset(0, 1),
+                    ),
+                  ],
+                ),
                 child: Row(
                   children: [
                     SizedBox(
@@ -140,8 +158,11 @@ class SignupPage extends StatelessWidget {
                 height: 20,
               ),
               InkWell(
-                onTap: () => Get.toNamed(AppRoutes.Login),
-                child: CustomMainText(text: 'Already Have an Account? Log In', fontWeight: FontWeight.w500,),
+                onTap: () => Get.offNamed(AppRoutes.Login),
+                child: CustomMainText(
+                  text: 'Already Have an Account? Log In',
+                  fontWeight: FontWeight.w500,
+                ),
               )
             ],
           ),

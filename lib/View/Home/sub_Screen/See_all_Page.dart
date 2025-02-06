@@ -15,8 +15,42 @@ class SeeAllPage extends StatelessWidget {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 12),
+          Padding(
+            padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16),
+            child: Row(
+              children: [
+                CustomMainText(
+                  text: 'Best Offers',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                const SizedBox(
+                  width: 12,
+                ),
+                Image.asset('assets/fire.png'),
+              ],
+            ),
+          ),
+          FoodsHoriList(),
+          Padding(
+            padding: const EdgeInsets.only(top: 20, left: 16, bottom: 20),
+            child: Row(
+              children: [
+                CustomMainText(
+                  text: 'Best Offers',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                const SizedBox(
+                  width: 12,
+                ),
+                Image.asset('assets/fire.png'),
+              ],
+            ),
+          ),
+          HotelHoriList()
         ],
       ),
     );

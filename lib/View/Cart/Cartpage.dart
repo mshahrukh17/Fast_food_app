@@ -1,4 +1,3 @@
-import 'package:fastfood_app/Components/Snackbar.dart';
 import '../../Export/AllExport.dart';
 
 class Cartpage extends StatelessWidget {
@@ -315,7 +314,7 @@ class Cartpage extends StatelessWidget {
                             Spacer(),
                             AppButtonTheme(
                                 onPressed: () {
-                                  Get.toNamed(AppRoutes.OrderDone);
+                                  Get.offAllNamed(AppRoutes.OrderDone);
                                   controller.cartItems.clear();
                                 },
                                 child: CustomMainText(

@@ -1,63 +1,60 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import '../Export/AllExport.dart';
 
-enum SnackBarType { success, delete, info, login }
+enum SnackBarType { success, delete, info, error }
 
 void showUltimateSnackBar(String title, String message, SnackBarType type) {
-  // Define variables based on the type of snackbar.
   Color primaryColor;
   IconData iconData;
   LinearGradient backgroundGradient;
 
-  // Use a switch-case to set properties for each type.
   switch (type) {
     case SnackBarType.success:
-      primaryColor = Colors.greenAccent;
+      primaryColor =const Color(0xFF69F0AE);
       iconData = Icons.verified_rounded;
       backgroundGradient = LinearGradient(
         colors: [
-          Colors.green.shade400,
-          Colors.green.shade700,
-          Colors.green.shade900
+         const Color(0xFF66BB6A),
+         const Color(0xFF388E3C),
+        const  Color(0xFF1B5E20)
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       );
       break;
     case SnackBarType.delete:
-      primaryColor = Colors.redAccent;
+      primaryColor =const Color(0xFFFF5252);
       iconData = Icons.delete;
       backgroundGradient = LinearGradient(
         colors: [
-          Colors.red.shade400,
-          Colors.red.shade700,
-          Colors.red.shade900
+         const Color(0xFFEF5350),
+         const Color(0xFFD32F2F),
+         const Color(0xFFB71C1C)
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      );
+      break;
+      case SnackBarType.error:
+      primaryColor = const Color(0xFFFF5252);
+      iconData = Icons.dangerous;
+      backgroundGradient = LinearGradient(
+        colors: [
+         const Color(0xFFEF5350),
+         const Color(0xFFD32F2F),
+         const Color(0xFFB71C1C)
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       );
       break;
     case SnackBarType.info:
-      primaryColor = Colors.blueAccent;
+      primaryColor =const Color(0xFF448AFF);
       iconData = Icons.info_outline;
       backgroundGradient = LinearGradient(
         colors: [
-          Colors.blue.shade400,
-          Colors.blue.shade700,
-          Colors.blue.shade900
-        ],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-      );
-      break;
-    case SnackBarType.login:
-      primaryColor = Colors.orangeAccent;
-      iconData = Icons.login;
-      backgroundGradient = LinearGradient(
-        colors: [
-          Colors.orange.shade400,
-          Colors.orange.shade700,
-          Colors.orange.shade900
+         const Color(0xFF42A5F5),
+         const Color(0xFF1976D2),
+         const Color(0xFF0D47A1)
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
@@ -65,13 +62,12 @@ void showUltimateSnackBar(String title, String message, SnackBarType type) {
       break;
   }
 
-  // Display the snackbar with the properties set above.
   Get.snackbar(
     title,
     message,
     snackPosition: SnackPosition.TOP,
-    backgroundColor: Colors.transparent,
-    colorText: Colors.white,
+    backgroundColor:const Color(0x00000000),
+    colorText: const Color(0xFFFFFFFF),
     borderRadius: 18,
     margin: EdgeInsets.all(12),
     padding: EdgeInsets.symmetric(horizontal: 22, vertical: 16),
@@ -90,19 +86,19 @@ void showUltimateSnackBar(String title, String message, SnackBarType type) {
       ),
       child: Icon(
         iconData,
-        color: Colors.white,
+        color:const Color(0xFFFFFFFF),
         size: 36,
       ),
     ),
     shouldIconPulse: true,
     borderWidth: 2,
     borderColor: primaryColor,
-    duration: Duration(seconds: 4),
+    duration: Duration(seconds: 2),
     overlayBlur: 6,
-    overlayColor: Colors.black.withOpacity(0.2),
+    overlayColor:const Color(0xFF000000).withOpacity(0.2),
     boxShadows: [
       BoxShadow(
-        color: Colors.black.withOpacity(0.4),
+        color:const Color(0xFF000000).withOpacity(0.4),
         spreadRadius: 3,
         blurRadius: 10,
         offset: Offset(3, 5),
@@ -110,18 +106,18 @@ void showUltimateSnackBar(String title, String message, SnackBarType type) {
     ],
     isDismissible: true,
     forwardAnimationCurve: Curves.fastOutSlowIn,
-    barBlur: 25, // Stronger glass effect
+    barBlur: 20, 
     mainButton: TextButton(
       onPressed: () => Get.back(),
       style: TextButton.styleFrom(
-        backgroundColor: Colors.white.withOpacity(0.2),
+        backgroundColor:const Color(0xFFFFFFFF).withOpacity(0.2),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
       ),
       child: Text(
         "DISMISS",
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        style: TextStyle(color:const Color(0xFFFFFFFF), fontWeight: FontWeight.bold),
       ),
     ),
     backgroundGradient: backgroundGradient,

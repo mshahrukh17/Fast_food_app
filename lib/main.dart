@@ -1,4 +1,4 @@
-import 'package:responsive_framework/responsive_framework.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
 import '../Export/AllExport.dart';
 
 void main() {

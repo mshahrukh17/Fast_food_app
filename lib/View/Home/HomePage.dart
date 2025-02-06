@@ -1,4 +1,3 @@
-import 'package:fastfood_app/Animation/Animations.dart';
 import '../../Export/AllExport.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,19 +5,21 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sh = MediaQuery.of(context).size.height;
+    final AuthController controller = Get.put(AuthController());
     final sw = MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Drawer(
-        backgroundColor:const Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(bottom: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 12),
+                  padding: const EdgeInsets.only(
+                    left: 12,
+                  ),
                   child: Image.asset(
                     'assets/logo2.png',
                     height: 40,
@@ -29,16 +30,27 @@ class HomePage extends StatelessWidget {
                 ),
                 ListOfDrawer(Icon(Icons.home_outlined), 'H O M E',
                     () => Get.offNamed(AppRoutes.BottomNavBar)),
-                ListOfDrawer(Icon(Icons.fastfood_outlined), 'F O O D', () => null),
-                ListOfDrawer(
-                    Icon(Icons.restaurant_menu), 'R E S T U R A N T', () => null),
-                ListOfDrawer(Icon(Icons.history), 'H I S T O R Y', () => null),
+                ListOfDrawer(Icon(Icons.fastfood_outlined), 'F O O D', () {
+                  Get.back();
+                  Get.toNamed(AppRoutes.SeeAllPage);
+                }),
+                ListOfDrawer(Icon(Icons.restaurant_menu), 'R E S T U R A N T',
+                    () {
+                  Get.back();
+                  Get.toNamed(AppRoutes.SeeAllPage);
+                }),
+                ListOfDrawer(Icon(Icons.favorite_border), 'F A V O R I T E',
+                    () {
+                  Get.back();
+                  Get.toNamed(AppRoutes.FavoriteItems);
+                }),
                 Spacer(),
-                ListOfDrawer(Icon(Icons.notifications_outlined),
-                    'N O T I F I C A T I O N S', () => null),
+                ListOfDrawer(Icon(Icons.notifications_outlined), 'N O T I F Y',
+                    () => null),
                 ListOfDrawer(Icon(Icons.settings_outlined), 'S E T T I N G S',
                     () => null),
-                ListOfDrawer(Icon(Icons.logout), 'L O G O U T', () => null)
+                ListOfDrawer(Icon(Icons.logout), 'E X I T',
+                    () => controller.logout())
               ],
             ),
           ),
@@ -115,17 +127,23 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomMainText(
-                        text: 'Best Offer',
+                        text: 'Best Offers',
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Image.asset('assets/fire.png'),
+                      Spacer(),
                       GestureDetector(
-                        onTap: () => Get.toNamed(AppRoutes.SeeAllPage),
+                        onTap: () => Get.toNamed(
+                          AppRoutes.SeeAllPage,
+                        ),
                         child: CustomMainText(
                           text: 'See all >',
                           color: Color(0xff009944),
@@ -135,278 +153,39 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  height: sh * 0.3,
-                  width: sw,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: foods.length,
-                    itemBuilder: (context, index) {
-                      final food = foods[index];
-                      return Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: GestureDetector(
-                          onTap: () => Get.toNamed(AppRoutes.FoodDetails,
-                              arguments: food),
-                          child: Container(
-                            height: sh,
-                            width: sw * 0.36,
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                    bottom: 5,
-                                    right: 15,
-                                    left: 15,
-                                    child: Container(
-                                      height: sh * 0.2,
-                                      width: sw * 0.22,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.grey.withOpacity(0.3),
-                                              spreadRadius: 2,
-                                              blurRadius: 5,
-                                              offset: Offset(0, 3),
-                                            ),
-                                          ],
-                                          borderRadius:
-                                              BorderRadius.circular(8)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(top: 50),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            FittedBox(
-                                                child: CustomMainText(
-                                              text: food.foodname,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15,
-                                            )),
-                                            SizedBox(height: 8),
-                                            FittedBox(
-                                                child: CustomMainText(
-                                              text: food.details,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.grey.shade600,
-                                            )),
-                                            SizedBox(height: 8),
-                                            FittedBox(
-                                                child: CustomMainText(
-                                              text:
-                                                  'Rs ' + food.price.toString(),
-                                              color: Color(0xff009944),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15,
-                                            )),
-                                          ],
-                                        ),
-                                      ),
-                                    )),
-                                Positioned(
-                                  top: 0,
-                                  left: 5,
-                                  right: 5,
-                                  child: Container(
-                                    height: sh * 0.155,
-                                    width: sw * 0.1,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.3),
-                                          spreadRadius: 2,
-                                          blurRadius: 5,
-                                          offset: Offset(0, 3),
-                                        ),
-                                      ],
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    child: FadeAnimation(
-                                      delay: 1,
-                                      child: Center(
-                                        child: Hero(
-                                          tag: food.foodimage,
-                                          child: Image.asset(
-                                            food.foodimage,
-                                            height: 100,
-                                            width: 100,
-                                            fit: BoxFit.fitHeight,
-                                            alignment: Alignment.center,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                FoodsHoriList(),
+                const SizedBox(
+                  height: 12,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomMainText(
-                        text: 'Resturant Nearby',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      CustomMainText(
-                        text: 'See all >',
-                        color: Color(0xff009944),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 187,
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: sh * 0.13,
-                              width: sw * 0.45,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/hotel.png'),
-                                      fit: BoxFit.cover),
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15))),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CustomMainText(
-                                    text: 'Resturant Nearby',
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.star,
-                                        color: Color(0xFFFF9900),
-                                      ),
-                                      CustomMainText(
-                                        text: ' 4.5',
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomMainText(
-                        text: 'Resturant Nearby',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      CustomMainText(
-                        text: 'See all >',
-                        color: Color(0xff009944),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 187,
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: sh * 0.13,
-                              width: sw * 0.45,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/hotel.png'),
-                                      fit: BoxFit.cover),
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(15),
-                                      topRight: Radius.circular(15))),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CustomMainText(
-                                    text: 'Resturant Nearby',
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.star,
-                                        color: Color(0xFFFF9900),
-                                      ),
-                                      CustomMainText(
-                                        text: ' 4.5',
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                RowHotelText(),
+                HotelHoriList(),
+                RowHotelText(),
+                HotelHoriList(),
               ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Padding RowHotelText() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomMainText(
+            text: 'Resturants Nearby',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          GestureDetector(
+            onTap: () => Get.toNamed(AppRoutes.SeeAllPage),
+            child: CustomMainText(
+              text: 'See all >',
+              color: Color(0xff009944),
+              fontWeight: FontWeight.bold,
             ),
           ),
         ],

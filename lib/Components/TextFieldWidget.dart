@@ -24,37 +24,40 @@ class TextFieldWidget extends StatelessWidget {
       child: TextField(
         controller: controller,
         obscureText: obscuretext,
-        cursorColor: Color(0xff009944),
+        cursorColor:const Color(0xff009944),
         keyboardType: keyboardType,
         obscuringCharacter: "*",
-        // showCursor: true,
+        showCursor: true,
         textAlign: TextAlign.start,
         style: TextStyle(
             fontWeight: FontWeight.bold, color: Colors.black, fontSize: 16),
         autocorrect: true,
         decoration: InputDecoration(
+          labelStyle: TextStyle(
+            color:const Color(0xFF000000)
+          ),
           contentPadding: EdgeInsets.all(15),
           suffixIcon: suffixicon,
           prefixIcon: prefixicon,
           labelText: labeltext,
           filled: true,
-          fillColor: Colors.white,
+          fillColor:const Color(0xFFFFFFFF),
           border: InputBorder.none,
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Color(0xff009944), width: 2)),
+              borderSide: BorderSide(color:const Color(0xff009944), width: 2)),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Colors.grey.shade400, width: 1.1)),
+              borderSide: BorderSide(color:const Color(0xFFBDBDBD), width: 1.1)),
           disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Colors.grey.shade400, width: 1.1)),
+              borderSide: BorderSide(color:const Color(0xFFBDBDBD), width: 1.1)),
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Colors.red, width: 1.1)),
+              borderSide: BorderSide(color:const Color.fromARGB(255, 244, 67, 54), width: 1.1)),
           focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Colors.red, width: 1.1)),
+              borderSide: BorderSide(color:const Color(0xFFF44336), width: 1.1)),
         ),
       ),
     );
