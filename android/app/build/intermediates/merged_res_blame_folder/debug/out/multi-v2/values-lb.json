@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.fastfood_app-mergeDebugResources-89:/values-lb/values-lb.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Shahrukh\\.gradle\\caches\\transforms-3\\476289865756a55b32cb5e419ee3d4ca\\transformed\\jetified-hcaptcha-21.6.0\\res\\values-lb\\values-lb.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "91",
+                        "endOffsets": "142"
+                    }
+                }
+            ]
+        }
+    ]
+}

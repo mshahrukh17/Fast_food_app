@@ -1,6 +1,6 @@
 import '../Export/AllExport.dart';
 
-enum SnackBarType { success, delete, info, error }
+enum SnackBarType {success, delete, info, error, added}
 
 void showUltimateSnackBar(String title, String message, SnackBarType type) {
   Color primaryColor;
@@ -60,15 +60,29 @@ void showUltimateSnackBar(String title, String message, SnackBarType type) {
         end: Alignment.bottomRight,
       );
       break;
+      case SnackBarType.added:
+       primaryColor =const Color(0xFFFFFC44);
+      iconData = Icons.favorite_outline;
+      backgroundGradient = LinearGradient(
+        colors: [
+         const Color(0xFFF3F2A4),
+         const Color(0xFFFDFB5F),
+         const Color(0xFFFFFB00)
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      );
+      break;
   }
 
   Get.snackbar(
     title,
     message,
+    titleText: CustomMainText(text: title, fontWeight: FontWeight.bold, color: const Color(0xFFFFFFFF), fontSize: 16,),
+    messageText: CustomMainText(text: message, fontWeight: FontWeight.w400, color: const Color(0xFFFFFFFF),),
     snackPosition: SnackPosition.TOP,
-    backgroundColor:const Color(0x00000000),
-    colorText: const Color(0xFFFFFFFF),
-    borderRadius: 18,
+    // backgroundColor:const Color(0x00000000),
+    borderRadius: 16,
     margin: EdgeInsets.all(12),
     padding: EdgeInsets.symmetric(horizontal: 22, vertical: 16),
     icon: AnimatedContainer(

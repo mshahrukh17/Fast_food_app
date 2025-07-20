@@ -9,8 +9,9 @@ class BottomNavController extends GetxController {
 }
 
 class BottomNavBar extends StatelessWidget {
-  final BottomNavController controller = Get.put(BottomNavController());
-  final CartController cartController = Get.put(CartController());
+  final BottomNavController controller = Get.find<BottomNavController>();
+  final CartController cartController = Get.find<CartController>();
+  final FavoriteController favController = Get.find<FavoriteController>();
 
   final List<Widget> pages = [HomePage(), Cartpage(), MyProfile()];
 

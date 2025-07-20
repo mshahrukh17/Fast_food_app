@@ -1,4 +1,5 @@
 class AppRoutes {
+  static const String SplashScreen =  '/splashScreen';
   static const String onboarding = '/onboardingPage';
   static const String Login = '/loginPage';
   static const String Signup = '/signupPage';
@@ -12,4 +13,7 @@ class AppRoutes {
   static const String ReserveTable = '/reservetablePage';
   static const String TableBook = '/tablebookPage';
   static const String FavoriteItems = '/favoriteitemPage';
+  static const String AdminDashboard = '/adminDashboard';
+  static const String AdminOrderScreen = '/adminOrderScreen';
+  static const String UserOrderScreen = '/userOrderScreen';
 }

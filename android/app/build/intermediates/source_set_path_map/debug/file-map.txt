@@ -1,0 +1,94 @@
+com.example.fastfood_app-navigation-common-2.7.7-0 C:\Users\Shahrukh\.gradle\caches\transforms-3\01a64b4738d06bc7fbc76edd123cfff5\transformed\navigation-common-2.7.7\res
+com.example.fastfood_app-jetified-foundation-release-1 C:\Users\Shahrukh\.gradle\caches\transforms-3\03e6ccd2937cb85ef2cec0d0ba7eef70\transformed\jetified-foundation-release\res
+com.example.fastfood_app-jetified-material-icons-core-release-2 C:\Users\Shahrukh\.gradle\caches\transforms-3\040e7621933004c238d236605b8d556c\transformed\jetified-material-icons-core-release\res
+com.example.fastfood_app-jetified-accompanist-themeadapter-core-0.34.0-3 C:\Users\Shahrukh\.gradle\caches\transforms-3\059cb7c337e413bd4f85807ba32b8819\transformed\jetified-accompanist-themeadapter-core-0.34.0\res
+com.example.fastfood_app-jetified-stripe-core-21.6.0-4 C:\Users\Shahrukh\.gradle\caches\transforms-3\08a1c3457e9528dbe5036a8c855bcf4c\transformed\jetified-stripe-core-21.6.0\res
+com.example.fastfood_app-jetified-profileinstaller-1.4.0-5 C:\Users\Shahrukh\.gradle\caches\transforms-3\0a5c8e34e05435c33814c9b0b2bd0cf3\transformed\jetified-profileinstaller-1.4.0\res
+com.example.fastfood_app-core-runtime-2.2.0-6 C:\Users\Shahrukh\.gradle\caches\transforms-3\0ab96371aff619fac44c42cc5a572c2d\transformed\core-runtime-2.2.0\res
+com.example.fastfood_app-jetified-material-release-7 C:\Users\Shahrukh\.gradle\caches\transforms-3\0efa4d88a096b40672140354b36765c3\transformed\jetified-material-release\res
+com.example.fastfood_app-coordinatorlayout-1.1.0-8 C:\Users\Shahrukh\.gradle\caches\transforms-3\12c318ceb1d796006bafce19e4d9ce15\transformed\coordinatorlayout-1.1.0\res
+com.example.fastfood_app-jetified-core-ktx-1.13.1-9 C:\Users\Shahrukh\.gradle\caches\transforms-3\13343ffbc28f4df89c868aab9b8db098\transformed\jetified-core-ktx-1.13.1\res
+com.example.fastfood_app-jetified-annotation-experimental-1.4.1-10 C:\Users\Shahrukh\.gradle\caches\transforms-3\1ccec74ede758895a93fed1a82765db1\transformed\jetified-annotation-experimental-1.4.1\res
+com.example.fastfood_app-jetified-animation-core-release-11 C:\Users\Shahrukh\.gradle\caches\transforms-3\2160fc75ef02167cc704b579c3985b79\transformed\jetified-animation-core-release\res
+com.example.fastfood_app-jetified-ui-viewbinding-1.6.8-12 C:\Users\Shahrukh\.gradle\caches\transforms-3\24a03bb1f947d37c9c7dd280b0d6215a\transformed\jetified-ui-viewbinding-1.6.8\res
+com.example.fastfood_app-jetified-savedstate-1.2.1-13 C:\Users\Shahrukh\.gradle\caches\transforms-3\2aa6ea59382cd1678ed94836bf486b3e\transformed\jetified-savedstate-1.2.1\res
+com.example.fastfood_app-jetified-lifecycle-livedata-core-ktx-2.8.7-14 C:\Users\Shahrukh\.gradle\caches\transforms-3\2afa9e267066dcf278491e021599dc56\transformed\jetified-lifecycle-livedata-core-ktx-2.8.7\res
+com.example.fastfood_app-core-1.13.1-15 C:\Users\Shahrukh\.gradle\caches\transforms-3\2ce504bbd37a9e0548893cdcaab06f18\transformed\core-1.13.1\res
+com.example.fastfood_app-jetified-appcompat-resources-1.7.0-16 C:\Users\Shahrukh\.gradle\caches\transforms-3\3034c8bbaf32570e755339a6c0857306\transformed\jetified-appcompat-resources-1.7.0\res
+com.example.fastfood_app-jetified-paymentsheet-21.6.0-17 C:\Users\Shahrukh\.gradle\caches\transforms-3\38332b19855ea2fcd6893a45561337ce\transformed\jetified-paymentsheet-21.6.0\res
+com.example.fastfood_app-fragment-1.8.6-18 C:\Users\Shahrukh\.gradle\caches\transforms-3\3db43218669b86aede5d17d8692c8bff\transformed\fragment-1.8.6\res
+com.example.fastfood_app-jetified-financial-connections-21.6.0-19 C:\Users\Shahrukh\.gradle\caches\transforms-3\3e6067be0c58e7ee20c08a7218474433\transformed\jetified-financial-connections-21.6.0\res
+com.example.fastfood_app-jetified-lifecycle-viewmodel-ktx-2.8.7-20 C:\Users\Shahrukh\.gradle\caches\transforms-3\40a2e071dd719b19b77a204108ff88b8\transformed\jetified-lifecycle-viewmodel-ktx-2.8.7\res
+com.example.fastfood_app-jetified-hcaptcha-21.6.0-21 C:\Users\Shahrukh\.gradle\caches\transforms-3\476289865756a55b32cb5e419ee3d4ca\transformed\jetified-hcaptcha-21.6.0\res
+com.example.fastfood_app-cardview-1.0.0-22 C:\Users\Shahrukh\.gradle\caches\transforms-3\48d253e01261000b12fa799ed28fb8bd\transformed\cardview-1.0.0\res
+com.example.fastfood_app-jetified-foundation-layout-release-23 C:\Users\Shahrukh\.gradle\caches\transforms-3\4923645066fcf2169c8ad80a9df49276\transformed\jetified-foundation-layout-release\res
+com.example.fastfood_app-material-1.12.0-24 C:\Users\Shahrukh\.gradle\caches\transforms-3\4aa72f67a313aa0085503d5a09a57a48\transformed\material-1.12.0\res
+com.example.fastfood_app-lifecycle-livedata-2.8.7-25 C:\Users\Shahrukh\.gradle\caches\transforms-3\4bdae811b6495a4f00b23dc4af56f6fa\transformed\lifecycle-livedata-2.8.7\res
+com.example.fastfood_app-jetified-fragment-ktx-1.8.6-26 C:\Users\Shahrukh\.gradle\caches\transforms-3\4be5a9732d24fc0840e1579266284658\transformed\jetified-fragment-ktx-1.8.6\res
+com.example.fastfood_app-jetified-activity-compose-1.9.3-27 C:\Users\Shahrukh\.gradle\caches\transforms-3\4d0df1de2a819d63b677cfcd44bd3cf4\transformed\jetified-activity-compose-1.9.3\res
+com.example.fastfood_app-jetified-play-services-base-18.5.0-28 C:\Users\Shahrukh\.gradle\caches\transforms-3\4e72e0d55354c7fabd69dc3b23ba0ad4\transformed\jetified-play-services-base-18.5.0\res
+com.example.fastfood_app-jetified-lifecycle-viewmodel-release-29 C:\Users\Shahrukh\.gradle\caches\transforms-3\5050e24b149b19cb8f6f2c5670868d71\transformed\jetified-lifecycle-viewmodel-release\res
+com.example.fastfood_app-jetified-play-services-wallet-19.4.0-30 C:\Users\Shahrukh\.gradle\caches\transforms-3\509a397fa86e8aa548501c8669c52411\transformed\jetified-play-services-wallet-19.4.0\res
+com.example.fastfood_app-jetified-customview-poolingcontainer-1.0.0-31 C:\Users\Shahrukh\.gradle\caches\transforms-3\51d0f875da159af46934da50b78a6266\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.example.fastfood_app-jetified-accompanist-themeadapter-appcompat-0.34.0-32 C:\Users\Shahrukh\.gradle\caches\transforms-3\55811ce0e92f8c9759309d1276be99a2\transformed\jetified-accompanist-themeadapter-appcompat-0.34.0\res
+com.example.fastfood_app-jetified-material3-1.0.1-33 C:\Users\Shahrukh\.gradle\caches\transforms-3\56c1c0f0cf8186a5f3c25b94b80d017d\transformed\jetified-material3-1.0.1\res
+com.example.fastfood_app-jetified-emoji2-1.3.0-34 C:\Users\Shahrukh\.gradle\caches\transforms-3\572d27391ce8006e5f9911b4cf67e26f\transformed\jetified-emoji2-1.3.0\res
+com.example.fastfood_app-jetified-core-common-2.0.4-35 C:\Users\Shahrukh\.gradle\caches\transforms-3\5875609c2ba62df961d903f438c3c267\transformed\jetified-core-common-2.0.4\res
+com.example.fastfood_app-jetified-stripe-3ds2-android-6.2.0-36 C:\Users\Shahrukh\.gradle\caches\transforms-3\593d3428e57e445b98d978937cb0ece4\transformed\jetified-stripe-3ds2-android-6.2.0\res
+com.example.fastfood_app-constraintlayout-2.2.0-37 C:\Users\Shahrukh\.gradle\caches\transforms-3\5e4a9f3ccc168e7437ffef4eb2521496\transformed\constraintlayout-2.2.0\res
+com.example.fastfood_app-jetified-window-java-1.0.0-beta04-38 C:\Users\Shahrukh\.gradle\caches\transforms-3\64a9c5cda8a5372c6cc5ce66cf7ddf3a\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.fastfood_app-jetified-lifecycle-viewmodel-compose-release-39 C:\Users\Shahrukh\.gradle\caches\transforms-3\67f65a6c10ceac43bb67c55daa8bf355\transformed\jetified-lifecycle-viewmodel-compose-release\res
+com.example.fastfood_app-media-1.0.0-40 C:\Users\Shahrukh\.gradle\caches\transforms-3\68b4960375f1b96f755e1fe5a460e511\transformed\media-1.0.0\res
+com.example.fastfood_app-jetified-material-ripple-release-41 C:\Users\Shahrukh\.gradle\caches\transforms-3\6b8b811b44d357022784c7df8cd41c9f\transformed\jetified-material-ripple-release\res
+com.example.fastfood_app-jetified-payments-ui-core-21.6.0-42 C:\Users\Shahrukh\.gradle\caches\transforms-3\6bdee301735fd0f0c09c3af1320bf09c\transformed\jetified-payments-ui-core-21.6.0\res
+com.example.fastfood_app-jetified-window-1.0.0-beta04-43 C:\Users\Shahrukh\.gradle\caches\transforms-3\6dce57a044ed3b10599b5b3af5c60b76\transformed\jetified-window-1.0.0-beta04\res
+com.example.fastfood_app-jetified-ui-text-release-44 C:\Users\Shahrukh\.gradle\caches\transforms-3\71273293fd94c737dc8f1c45d038c4ce\transformed\jetified-ui-text-release\res
+com.example.fastfood_app-drawerlayout-1.1.1-45 C:\Users\Shahrukh\.gradle\caches\transforms-3\759ecb8614a2bdd47048e2adfae3d6ac\transformed\drawerlayout-1.1.1\res
+com.example.fastfood_app-jetified-startup-runtime-1.1.1-46 C:\Users\Shahrukh\.gradle\caches\transforms-3\783f11da4e9af9321763b345b210d579\transformed\jetified-startup-runtime-1.1.1\res
+com.example.fastfood_app-jetified-navigation-compose-2.7.7-47 C:\Users\Shahrukh\.gradle\caches\transforms-3\7aa409f81cd3b1394d2bf00cf25467de\transformed\jetified-navigation-compose-2.7.7\res
+com.example.fastfood_app-jetified-payments-core-21.6.0-48 C:\Users\Shahrukh\.gradle\caches\transforms-3\7e752d1380680c59153d8dc52f53349d\transformed\jetified-payments-core-21.6.0\res
+com.example.fastfood_app-jetified-viewpager2-1.1.0-beta02-49 C:\Users\Shahrukh\.gradle\caches\transforms-3\86ecc0a41b29070d0712c0557ff7cddc\transformed\jetified-viewpager2-1.1.0-beta02\res
+com.example.fastfood_app-jetified-play-services-basement-18.4.0-50 C:\Users\Shahrukh\.gradle\caches\transforms-3\8ab3ffe2c3e2ce68e796944348c4ec44\transformed\jetified-play-services-basement-18.4.0\res
+com.example.fastfood_app-jetified-lifecycle-process-2.8.7-51 C:\Users\Shahrukh\.gradle\caches\transforms-3\8ee4fc2a3ebe70ad9e7217cdd7d484d1\transformed\jetified-lifecycle-process-2.8.7\res
+com.example.fastfood_app-jetified-lifecycle-viewmodel-savedstate-2.8.7-52 C:\Users\Shahrukh\.gradle\caches\transforms-3\9215c744ba70139bff9d325e61485d72\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.7\res
+com.example.fastfood_app-jetified-runtime-release-53 C:\Users\Shahrukh\.gradle\caches\transforms-3\955b48042b20badef1ea59c17d32ced9\transformed\jetified-runtime-release\res
+com.example.fastfood_app-jetified-play-services-maps-18.0.2-54 C:\Users\Shahrukh\.gradle\caches\transforms-3\956460a1002c3389425f3170c835b2a5\transformed\jetified-play-services-maps-18.0.2\res
+com.example.fastfood_app-transition-1.5.0-55 C:\Users\Shahrukh\.gradle\caches\transforms-3\971aedbd575ee8de26b5be385365ef4b\transformed\transition-1.5.0\res
+com.example.fastfood_app-jetified-accompanist-themeadapter-material-0.34.0-56 C:\Users\Shahrukh\.gradle\caches\transforms-3\995c409e2302bbca49154bbe8b03d7cf\transformed\jetified-accompanist-themeadapter-material-0.34.0\res
+com.example.fastfood_app-jetified-ui-geometry-release-57 C:\Users\Shahrukh\.gradle\caches\transforms-3\9c33d48b50c140b4b6852bd3c9f131c6\transformed\jetified-ui-geometry-release\res
+com.example.fastfood_app-appcompat-1.7.0-58 C:\Users\Shahrukh\.gradle\caches\transforms-3\9ca1311b3dd0537f7737faabb3db3159\transformed\appcompat-1.7.0\res
+com.example.fastfood_app-lifecycle-livedata-core-2.8.7-59 C:\Users\Shahrukh\.gradle\caches\transforms-3\9eb144514ff9aab63bf60bfdcccaa49a\transformed\lifecycle-livedata-core-2.8.7\res
+com.example.fastfood_app-jetified-ui-util-release-60 C:\Users\Shahrukh\.gradle\caches\transforms-3\a2b220da8e91e6bdd5d7ad64dfa7a851\transformed\jetified-ui-util-release\res
+com.example.fastfood_app-jetified-lifecycle-runtime-ktx-release-61 C:\Users\Shahrukh\.gradle\caches\transforms-3\a327d808fc541d91243f885d741693c8\transformed\jetified-lifecycle-runtime-ktx-release\res
+com.example.fastfood_app-jetified-stripe-ui-core-21.6.0-62 C:\Users\Shahrukh\.gradle\caches\transforms-3\aa550386f6c2a6e1fe36cb94c1988bd2\transformed\jetified-stripe-ui-core-21.6.0\res
+com.example.fastfood_app-jetified-ui-release-63 C:\Users\Shahrukh\.gradle\caches\transforms-3\ace2090d5c91d3d1a96edb26fcfe4cf2\transformed\jetified-ui-release\res
+com.example.fastfood_app-jetified-ui-tooling-preview-release-64 C:\Users\Shahrukh\.gradle\caches\transforms-3\ad7c4a12031fb593d95ced62cafc0f6a\transformed\jetified-ui-tooling-preview-release\res
+com.example.fastfood_app-jetified-lifecycle-runtime-release-65 C:\Users\Shahrukh\.gradle\caches\transforms-3\b28c044d895853193f0ec9ed503973f9\transformed\jetified-lifecycle-runtime-release\res
+com.example.fastfood_app-navigation-runtime-ktx-2.7.7-66 C:\Users\Shahrukh\.gradle\caches\transforms-3\b662768e753a194fa06ec39dd31df2d0\transformed\navigation-runtime-ktx-2.7.7\res
+com.example.fastfood_app-jetified-lifecycle-runtime-compose-release-67 C:\Users\Shahrukh\.gradle\caches\transforms-3\b72105c25d4d4b344b9fd544acb763a0\transformed\jetified-lifecycle-runtime-compose-release\res
+com.example.fastfood_app-jetified-savedstate-ktx-1.2.1-68 C:\Users\Shahrukh\.gradle\caches\transforms-3\b971dce8dddac154c8e4e2966b179a10\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.fastfood_app-jetified-animation-release-69 C:\Users\Shahrukh\.gradle\caches\transforms-3\ba85987fd10f317c9d1ee8975eee021c\transformed\jetified-animation-release\res
+com.example.fastfood_app-navigation-runtime-2.7.7-70 C:\Users\Shahrukh\.gradle\caches\transforms-3\c6f372faaa6519d312a260053b3babc7\transformed\navigation-runtime-2.7.7\res
+com.example.fastfood_app-browser-1.8.0-71 C:\Users\Shahrukh\.gradle\caches\transforms-3\c76ca98ad0a0bdc764f7f085d73b0da0\transformed\browser-1.8.0\res
+com.example.fastfood_app-jetified-payments-model-21.6.0-72 C:\Users\Shahrukh\.gradle\caches\transforms-3\c9d5c002f43ec726fa4095735c64ea91\transformed\jetified-payments-model-21.6.0\res
+com.example.fastfood_app-jetified-ui-unit-release-73 C:\Users\Shahrukh\.gradle\caches\transforms-3\d56a65455970b13a051d1481c83dfb3b\transformed\jetified-ui-unit-release\res
+com.example.fastfood_app-jetified-glide-4.12.0-74 C:\Users\Shahrukh\.gradle\caches\transforms-3\d83d8cdc3e27f1ada8bc8ed644b3e2d2\transformed\jetified-glide-4.12.0\res
+com.example.fastfood_app-recyclerview-1.3.2-75 C:\Users\Shahrukh\.gradle\caches\transforms-3\dffc4866ee4990e3f815af1e843a6c41\transformed\recyclerview-1.3.2\res
+com.example.fastfood_app-jetified-runtime-saveable-release-76 C:\Users\Shahrukh\.gradle\caches\transforms-3\e67e8458caa2dea9b012739b585effc2\transformed\jetified-runtime-saveable-release\res
+com.example.fastfood_app-navigation-common-ktx-2.7.7-77 C:\Users\Shahrukh\.gradle\caches\transforms-3\e745105bce7c18e3599e37e0e726b3f3\transformed\navigation-common-ktx-2.7.7\res
+com.example.fastfood_app-jetified-activity-1.9.3-78 C:\Users\Shahrukh\.gradle\caches\transforms-3\e7ee6e2833248607e11d2814415974c3\transformed\jetified-activity-1.9.3\res
+com.example.fastfood_app-jetified-emoji2-views-helper-1.3.0-79 C:\Users\Shahrukh\.gradle\caches\transforms-3\e83886b928a06528acba49ec53a649c7\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.example.fastfood_app-jetified-lifecycle-livedata-ktx-2.8.7-80 C:\Users\Shahrukh\.gradle\caches\transforms-3\f6fb61bc25f3ab0c04d91cf20174cd25\transformed\jetified-lifecycle-livedata-ktx-2.8.7\res
+com.example.fastfood_app-jetified-ui-graphics-release-81 C:\Users\Shahrukh\.gradle\caches\transforms-3\fab9fe911c431028fbc1078abe3721ba\transformed\jetified-ui-graphics-release\res
+com.example.fastfood_app-jetified-accompanist-themeadapter-material3-0.34.0-82 C:\Users\Shahrukh\.gradle\caches\transforms-3\fb99497cf07f594854b773b8bf0e445c\transformed\jetified-accompanist-themeadapter-material3-0.34.0\res
+com.example.fastfood_app-jetified-activity-ktx-1.9.3-83 C:\Users\Shahrukh\.gradle\caches\transforms-3\ffaf9b7707bc2ef6375086906bca7fb6\transformed\jetified-activity-ktx-1.9.3\res
+com.example.fastfood_app-packaged_res-84 C:\Users\Shahrukh\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.4\android\build\intermediates\packaged_res\debug
+com.example.fastfood_app-packaged_res-85 C:\Users\Shahrukh\AppData\Local\Pub\Cache\hosted\pub.dev\stripe_android-11.5.0\android\build\intermediates\packaged_res\debug
+com.example.fastfood_app-pngs-86 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\build\generated\res\pngs\debug
+com.example.fastfood_app-resValues-87 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\build\generated\res\resValues\debug
+com.example.fastfood_app-rs-88 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\build\generated\res\rs\debug
+com.example.fastfood_app-mergeDebugResources-89 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.fastfood_app-mergeDebugResources-90 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.fastfood_app-merged_res-91 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\build\intermediates\merged_res\debug
+com.example.fastfood_app-debug-92 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\src\debug\res
+com.example.fastfood_app-main-93 C:\Users\Shahrukh\flutter projects\fastfood_app\android\app\src\main\res

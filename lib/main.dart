@@ -1,7 +1,12 @@
-import 'package:responsive_framework/responsive_wrapper.dart';
+// ignore_for_file: dead_code
 import '../Export/AllExport.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  Stripe.publishableKey = "pk_test_TYooMQauvdEDq54NiTphI7jx";
+  await Stripe.instance.applySettings();
   runApp(const MyApp());
 }
 
@@ -25,7 +30,7 @@ class MyApp extends StatelessWidget {
           ResponsiveBreakpoint.autoScale(1900, name: 'XL'),
         ],
       ),
-      initialRoute: AppRoutes.onboarding,
+      initialRoute: AppRoutes.SplashScreen,
       getPages: AppPages.routes,
     );
   }
