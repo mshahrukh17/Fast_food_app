@@ -14,7 +14,7 @@ class FoodDetails extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFFFFF),
         elevation: 1,
-        title: Image.asset(
+        title:const Image.asset(
           'assets/logo2.png',
           height: 35,
         ),
