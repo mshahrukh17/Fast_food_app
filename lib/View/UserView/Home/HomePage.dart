@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
       ),
       appBar: AppBar(
         elevation: 1,
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFFFFFF),
         title: Image.asset(
           'assets/logo2.png',
           height: 35,
@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
             physics: const RangeMaintainingScrollPhysics(),
             child: Column(
               children: [
-                SizedBox(
+               const SizedBox(
                   height: 10,
                 ),
                 Center(
@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
                         gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
-                            colors: [Color(0xff004422), Color(0xffD9FFEC)]),
+                            colors:const [Color(0xff004422), Color(0xFFD9FFEC)]),
                         borderRadius: BorderRadius.circular(10)),
                     child: Stack(
                       children: [
@@ -99,14 +99,14 @@ class HomePage extends StatelessWidget {
                             children: [
                               CustomMainText(
                                 text: 'Special Offer\nfor match',
-                                color: Colors.white,
+                                color: const Color(0xFFFFFFFF),
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                               CustomMainText(
                                 text:
                                     'We are here with the\nBest Burgers in town.',
-                                color: Colors.white,
+                                color: const Color(0xFFFFFFFF),
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
                                 height: 30,
                                 width: 85,
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: const Color.from(alpha: 1, red: 1, green: 1, blue: 1),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Center(
                                     child: CustomMainText(
@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                         ),
                         child: CustomMainText(
                           text: 'See all >',
-                          color: Color(0xff009944),
+                          color:const Color(0xFF009944),
                           fontWeight: FontWeight.bold,
                         ),
                       )
@@ -191,7 +191,7 @@ class HomePage extends StatelessWidget {
             onTap: () => Get.toNamed(AppRoutes.SeeAllPage),
             child: CustomMainText(
               text: 'See all >',
-              color: Color(0xff009944),
+              color:const Color(0xFF009944),
               fontWeight: FontWeight.bold,
             ),
           ),

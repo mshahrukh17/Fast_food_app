@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import '../../../../Export/AllExport.dart';
 
 class HotelHoriList extends StatelessWidget {
@@ -10,7 +12,7 @@ class HotelHoriList extends StatelessWidget {
     final sh = MediaQuery.of(context).size.height;
     final sw = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: 190,
+      height: 215,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
@@ -24,10 +26,10 @@ class HotelHoriList extends StatelessWidget {
               onTap: () => Get.toNamed(AppRoutes.ResturantDetails, arguments: restu),
               child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: const Color(0xFFFFFFFF),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.3),
+                          color: const Color(0xFF9E9E9E).withOpacity(0.3),
                           spreadRadius: 2,
                           blurRadius: 5,
                           offset: Offset(1, 2),
@@ -65,7 +67,7 @@ class HotelHoriList extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.star,
-                                  color: Color(0xFFFF9900),
+                                  color:const Color(0xFFFF9900),
                                 ),
                                 CustomMainText(
                                   text: ' 4.5',

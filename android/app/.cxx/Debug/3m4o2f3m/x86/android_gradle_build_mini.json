@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\flutter sdk\\flutter\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\HAROON TRADERS\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\HAROON TRADERS\\flutter projects\\Fast_food_app\\android\\app\\.cxx\\Debug\\3m4o2f3m\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\HAROON TRADERS\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\HAROON TRADERS\\flutter projects\\Fast_food_app\\android\\app\\.cxx\\Debug\\3m4o2f3m\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, deprecated_member_use
 import '../../../../Export/AllExport.dart';
 
 class FoodsHoriList extends StatelessWidget {

@@ -52,7 +52,7 @@ class FoodDetails extends StatelessWidget {
                               height: 35,
                               width: 80,
                               decoration: BoxDecoration(
-                                  color: Color(0xFFC7C6C6),
+                                  color:const Color(0xFFC7C6C6),
                                   borderRadius: BorderRadius.circular(8)),
                               child: Center(
                                   child: CustomMainText(
@@ -122,7 +122,7 @@ class FoodDetails extends StatelessWidget {
                           ),
                           Icon(
                             Icons.shopping_bag_outlined,
-                            color: Color(0xff009944),
+                            color:const Color(0xff009944),
                           ),
                           CustomMainText(
                             text: '  2000+ Orders',
@@ -138,7 +138,7 @@ class FoodDetails extends StatelessWidget {
                       CustomMainText(
                         text:
                             'Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum. Chicken Tomatoa Lettuse Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt.',
-                        color: Color(0xFF000000),
+                        color:const Color(0xFF000000),
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
                       ),

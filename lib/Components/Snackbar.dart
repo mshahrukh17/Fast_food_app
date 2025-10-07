@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import '../Export/AllExport.dart';
 
 enum SnackBarType {success, delete, info, error, added}

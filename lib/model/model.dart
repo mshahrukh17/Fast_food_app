@@ -15,7 +15,6 @@ class Foodmodel {
     this.quantity = 1,
   });
 
-  // 🔁 Convert to Map (for Firestore)
   Map<String, dynamic> toMap() {
     return {
       'foodimage': foodimage,
@@ -26,7 +25,6 @@ class Foodmodel {
     };
   }
 
-  // 🔁 Convert from Map (optional but useful)
   factory Foodmodel.fromMap(Map<String, dynamic> map) {
     return Foodmodel(
       foodimage: map['foodimage'] ?? '',
@@ -62,10 +60,10 @@ class UserOrder {
   final String email;
   final String userID;
   final orderKey;
-  final List<Map<String, dynamic>>order; // each Foodmodel should be converted to map
+  final List<Map<String, dynamic>>order; 
   final String totalPrice;
   final String orderStatus;
-  final DateTime timeStamp; // DateTime instead of Timestamp
+  final DateTime timeStamp; 
 
   UserOrder({
     required this.name,
@@ -87,7 +85,7 @@ class UserOrder {
       'order': order,
       'totalPrice': totalPrice,
       'orderStatus': orderStatus,
-      'timeStamp': timeStamp, // Firestore will convert this to Timestamp
+      'timeStamp': timeStamp, 
     };
   }
 
@@ -101,7 +99,7 @@ class UserOrder {
       totalPrice: map['totalPrice'] ?? '',
       orderStatus: map['orderStatus'] ?? '',
       timeStamp:
-          (map['timeStamp'] as Timestamp).toDate(), // convert to DateTime
+          (map['timeStamp'] as Timestamp).toDate(), 
     );
   }
 }

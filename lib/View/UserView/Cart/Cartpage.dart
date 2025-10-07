@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import '../../../Export/AllExport.dart';
 
 class Cartpage extends StatelessWidget {
@@ -357,48 +359,51 @@ class Cartpage extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text('Your Information',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          SizedBox(height: 12),
-          TextField(
-            controller: _nameCtrl,
-            decoration: InputDecoration(labelText: 'Name'),
-          ),
-          TextField(
-            controller: _emailCtrl,
-            decoration: InputDecoration(labelText: 'Email'),
-            keyboardType: TextInputType.emailAddress,
-          ),
-          TextField(
-            controller: _phoneCtrl,
-            decoration: InputDecoration(labelText: 'Phone'),
-            keyboardType: TextInputType.phone,
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              if (_nameCtrl.text.isEmpty ||
-                  _emailCtrl.text.isEmpty ||
-                  _phoneCtrl.text.isEmpty) {
-                showUltimateSnackBar(
-                    'Error', 'All fields are required', SnackBarType.error);
-                return;
-              }
-              Get.back();
-              // Pass these into your Stripe payment method:
-              paymentController.makePayment(
-                name: _nameCtrl.text.trim(),
-                email: _emailCtrl.text.trim(),
-                phone: _phoneCtrl.text.trim(),
-              );
-            },
-            child: Text('Continue to Payment'),
-          ),
-          SizedBox(height: 16),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Your Information',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            SizedBox(height: 12),
+            TextField(
+              controller: _nameCtrl,
+              decoration: InputDecoration(labelText: 'Name'),
+            ),
+            TextField(
+              controller: _emailCtrl,
+              decoration: InputDecoration(labelText: 'Email'),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            TextField(
+              controller: _phoneCtrl,
+              decoration: InputDecoration(labelText: 'Phone'),
+              keyboardType: TextInputType.phone,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                if (_nameCtrl.text.isEmpty ||
+                    _emailCtrl.text.isEmpty ||
+                    _phoneCtrl.text.isEmpty) {
+                  showUltimateSnackBar(
+                      'Error', 'All fields are required', SnackBarType.error);
+                  return;
+                }
+                Get.back();
+                // Pass these into your Stripe payment method:
+                paymentController.makePayment(
+                  name: _nameCtrl.text.trim(),
+                  email: _emailCtrl.text.trim(),
+                  phone: _phoneCtrl.text.trim(),
+                );
+              },
+              child: Text('Continue to Payment'),
+            ),
+            SizedBox(height: 16),
+          ],
+        ),
       ),
     ));
   }
